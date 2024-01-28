@@ -1,29 +1,44 @@
 .describeWord {
   width: 100%;
-  // height: 30vh;
+  font-weight: 600;
+  font-size: 20px;
 }
+
 .describeWord__wrapper {
-text-align: center;
   width: 100%;
   padding: 10% 10% 10% 0;
   display: flex;
   flex-direction: column;
   gap: 3vh;
 }
-// .word {
-// }
-.word__letter {
-  border-bottom: 2px solid #000;
+
+.word {
+  display: flex;
+  gap: 1vw;
+  justify-content: center;
+
+  &__letter {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #000;
+    color: white;
+    min-width: 20px;
+  }
 }
-// .hint {
-// }
+
+.hint {
+  text-align: center;
+}
+
 .guesses {
   display: flex;
   gap: 5%;
   justify-content: center;
 }
+
 // .guesses__text {
 // }
 .guesses__digits {
   display: flex;
+  color: red;
 }

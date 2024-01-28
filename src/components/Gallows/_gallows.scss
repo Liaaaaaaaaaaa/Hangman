@@ -38,17 +38,19 @@
   align-items: center;
 }
 
+.human_color {
+    background: red;
+}
+
 .human__head {
   width: 50%;
   height: 30%;
-  background: red;
   border-radius: 50%;
 }
 
 .human__body {
   width: 5%;
   height: 40%;
-  background: red;
 }
 
 .human__leftArm {
@@ -58,7 +60,6 @@
   transform: rotate(30deg);
   width: 40%;
   height: 5%;
-  background: red;
 }
 
 .human__rightArm {
@@ -68,7 +69,6 @@
   transform: rotate(-30deg);
   width: 40%;
   height: 5%;
-  background: red;
 }
 
 .human__leftLeg {
@@ -78,7 +78,6 @@
   transform: rotate(-30deg);
   width: 40%;
   height: 5%;
-  background: red;
 }
 
 .human__rightLeg {
@@ -88,5 +87,4 @@
   transform: rotate(30deg);
   width: 40%;
   height: 5%;
-  background: red;
 }
