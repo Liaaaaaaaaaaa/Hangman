@@ -1,0 +1,20 @@
+.keyboard {}
+
+.keyboard__wrapper {
+  width: 60vw;
+  height: 20vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vw;
+}
+
+.keyboard__button {
+  width: 9%;
+  // height: 15%;
+  background: yellow;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

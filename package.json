@@ -1,0 +1,37 @@
+{
+  "name": "hangman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Liaaaaaaaaaaa/Hangman.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Liaaaaaaaaaaa/Hangman/issues"
+  },
+  "homepage": "https://github.com/Liaaaaaaaaaaa/Hangman#readme",
+  "devDependencies": {
+    "css-loader": "^6.9.1",
+    "html-loader": "^5.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.0.0",
+    "sass-resources-loader": "^2.2.5",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "normalize.scss": "^0.1.0",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

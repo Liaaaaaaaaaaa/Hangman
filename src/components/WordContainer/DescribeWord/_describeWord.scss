@@ -1,0 +1,29 @@
+.describeWord {
+  width: 100%;
+  // height: 30vh;
+}
+.describeWord__wrapper {
+text-align: center;
+  width: 100%;
+  padding: 10% 10% 10% 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+// .word {
+// }
+.word__letter {
+  border-bottom: 2px solid #000;
+}
+// .hint {
+// }
+.guesses {
+  display: flex;
+  gap: 5%;
+  justify-content: center;
+}
+// .guesses__text {
+// }
+.guesses__digits {
+  display: flex;
+}
