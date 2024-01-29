@@ -1,12 +1,12 @@
 .describeWord {
   width: 100%;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.5vw;
 }
 
 .describeWord__wrapper {
   width: 100%;
-  padding: 10% 10% 10% 0;
+  padding: 5% 5% 5% 0;
   display: flex;
   flex-direction: column;
   gap: 3vh;
@@ -22,7 +22,7 @@
     justify-content: center;
     border-bottom: 2px solid #000;
     color: white;
-    min-width: 20px;
+    min-width: 1.5vw;
   }
 }
 

@@ -27,7 +27,7 @@ const humanParts = Gallows.querySelectorAll(".human__part");
 
 //-----Word---------
 let numberWord = 0;
-
+// let wordNode = document.querySelector('.word');
 const describeWordWrapper = document.querySelector('.describeWord__wrapper');
 
 //---digit------
@@ -42,10 +42,19 @@ const modalText = document.querySelector('.modal__text');
 //-------Play-again--------
 const modalButton = document.querySelector('.modal__button');
 
+//---Local-storage--------------
+window.addEventListener("beforeunload", function () {
+  localStorage.setItem("numberWord", numberWord);
+  document.querySelector('.word').remove();
+});
+
+
+
 
 function putKeyboard(e) {
+  console.log(numberWord);
 
-  if (e.target.className === "keyboard__button" || e.key) {
+  if ((e.target.className === "keyboard__button" || e.key)) {
     console.log(e);
 
     let putLetter;
@@ -70,7 +79,9 @@ function putKeyboard(e) {
 
     let modalSecretWord = document.querySelector('.modal__secret-word');
     let wholeWord = Array.from(massiveLettersWord).map(e => e.outerText).join('');
-
+    if (activeButton.style.background === "grey") {
+      return
+    }
     if (indexLetter === doubleIndexLetter) {
       if ((massiveLettersWord[indexLetter])) {
         massiveLettersWord[indexLetter].style.color = "black";
@@ -128,12 +139,11 @@ document.addEventListener("keydown", putKeyboard);
 
 
 
-function addNewWord() {
+function addNewWord(numberWord) {
+  // numberWord = localStorage.getItem("numberWord");
   console.log(numberWord);
   document.querySelector(".hint").textContent = Riddles[numberWord].description;
   let newWord = Riddles[numberWord].answer;
-  // console.log(newWord);
-  // console.log(newWord.length);
   createNewWord();
 
   function createNewWord() {
@@ -148,12 +158,14 @@ function addNewWord() {
       ulNewWord.append(liNewWord);
     }
     describeWordWrapper.prepend(ulNewWord);
+
   }
 
 }
 
 // ------Play--- again ------------------
 function playAgain() {
+  // numberWord = localStorage.getItem("numberWord");
   counterGuesses = 0;
   digitGuesses.textContent = counterGuesses;
   humanParts.forEach(e => { e.style.background = "white" });
@@ -161,9 +173,8 @@ function playAgain() {
   keyboardButtons.forEach(e => e.classList.remove('button-no-active'));
 
   numberWord += 1;
-  addNewWord();
+  addNewWord(numberWord);
 
-  // wordContainer.querySelectorAll(".word__letter");
   modalWindow.classList.toggle('active');
 
 }
