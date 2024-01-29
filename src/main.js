@@ -2,7 +2,7 @@ import './index.html';
 import './styles/main.scss';
 import Riddles from './components/WordContainer/DescribeWord/riddles.json';
 
-import Gallows from "./components/Gallows/gallows.js";
+import Gallows from "./components/gallows/gallows.js";
 import wordContainer from "./components/WordContainer/wordContainer.js";
 import modal from './components/Modal/modal.js';
 
@@ -27,7 +27,7 @@ const humanParts = Gallows.querySelectorAll(".human__part");
 
 //-----Word---------
 let numberWord = 0;
-let wordNode = document.querySelector('.word');
+
 const describeWordWrapper = document.querySelector('.describeWord__wrapper');
 
 //---digit------
@@ -48,32 +48,45 @@ function putKeyboard(e) {
     let putLetter = e.target.innerText.toLowerCase();
     let massiveLettersWord = wordContainer.querySelectorAll(".word__letter");
     let indexLetter = Array.from(massiveLettersWord).map(e => e.textContent).indexOf(putLetter);
+    let doubleIndexLetter = Array.from(massiveLettersWord).map(e => e.textContent).lastIndexOf(putLetter);
 
     let modalSecretWord = document.querySelector('.modal__secret-word');
     let wholeWord = Array.from(massiveLettersWord).map(e => e.textContent).join('');
 
-
-
-
-    if (massiveLettersWord[indexLetter]) {
+    if (indexLetter === doubleIndexLetter) {
+      if ((massiveLettersWord[indexLetter])) {
+        massiveLettersWord[indexLetter].style.color = "black";
+        massiveLettersWord[indexLetter].style.borderBottom = "none";
+        counterRightLetters += 1;
+      } else {
+        humanParts[counterGuesses].style.background = "red"
+        counterGuesses += 1;
+        digitGuesses.textContent = counterGuesses;
+      }
+    }
+    console.log(indexLetter);
+    console.log(doubleIndexLetter);
+    console.log(!(indexLetter === doubleIndexLetter))
+    if (!(indexLetter === doubleIndexLetter)) {
       massiveLettersWord[indexLetter].style.color = "black";
+      massiveLettersWord[doubleIndexLetter].style.color = "black";
       massiveLettersWord[indexLetter].style.borderBottom = "none";
-      
-      counterRightLetters += 1;
-    } else {
-      humanParts[counterGuesses].style.background = "red"
-      counterGuesses += 1;
-      digitGuesses.textContent = counterGuesses;
+      massiveLettersWord[doubleIndexLetter].style.borderBottom = "none";
+      counterRightLetters += 2;
     }
 
     e.target.style.background = "grey";
     e.target.classList.toggle('button-no-active');
     modalSecretWord.textContent = `Secret word: ${wholeWord}`;
 
-    console.log(massiveLettersWord.length);
+    // console.log(counterGuesses === 6);
+    // console.log(counterRightLetters === massiveLettersWord.length);
+    // console.log(counterRightLetters);
+    // console.log(massiveLettersWord.length);
 
     if ((counterGuesses === 6) || (counterRightLetters === massiveLettersWord.length)) {
       openModal();
+      counterRightLetters = 0;
     }
   }
 
@@ -81,9 +94,6 @@ function putKeyboard(e) {
 
 
 function openModal() {
-  console.log(counterGuesses === 6);
-  console.log( counterRightLetters);
-
   if (counterGuesses === 6) {
     modalTitle.textContent = "No congratulations!";
     modalText.textContent = "You lost";
@@ -91,8 +101,10 @@ function openModal() {
     modalTitle.textContent = "Congratulations!";
     modalText.textContent = "You won. Good job";
   }
-  modalWindow.classList.toggle('active');
+  let wordNode = document.querySelector('.word');
   wordNode.remove();
+  modalWindow.classList.toggle('active');
+
 }
 
 keyboardContainer.addEventListener("click", putKeyboard)
@@ -105,20 +117,19 @@ function addNewWord() {
   console.log(numberWord);
   document.querySelector(".hint").textContent = Riddles[numberWord].description;
   let newWord = Riddles[numberWord].answer;
-  // let countLettersNewWord = Riddles[numberWord].answer.length;
-  console.log(newWord);
-  console.log(newWord.length);
+  // console.log(newWord);
+  // console.log(newWord.length);
   createNewWord();
 
-  console.log(describeWordWrapper);
+  // console.log(describeWordWrapper);
 
 
   function createNewWord() {
-    console.log(numberWord);
+    // console.log(numberWord);
     let ulNewWord = document.createElement('ul');
     ulNewWord.classList.add('word');
     let massiveNewWord = newWord.split('');
-    console.log(massiveNewWord);
+    // console.log(massiveNewWord);
 
     for (let i = 0; i < newWord.length; i++) {
       let liNewWord = document.createElement('li');
