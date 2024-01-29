@@ -13,10 +13,10 @@ body.append(Gallows);
 body.append(wordContainer);
 body.append(modal);
 
+
 //--keyboard ------------
 const keyboardContainer = wordContainer.querySelector(".keyboard__wrapper");
 const keyboardButtons = document.querySelectorAll('.keyboard__button');
-
 
 //-----Guesses-------------------
 let counterGuesses = 0;
@@ -44,14 +44,32 @@ const modalButton = document.querySelector('.modal__button');
 
 
 function putKeyboard(e) {
-  if (e.target.className === "keyboard__button") {
-    let putLetter = e.target.innerText.toLowerCase();
+
+  if (e.target.className === "keyboard__button" || e.key) {
+    console.log(e);
+
+    let putLetter;
+    let activeButton;
+
+    if (e.target.className === "keyboard__button") {
+      putLetter = e.target.innerText.toLowerCase();
+      activeButton = e.target;
+    } else {
+      putLetter = e.key.toUpperCase();
+      let buttonVirtual = Array.from(keyboardButtons).filter(e => e.outerText === putLetter);
+      activeButton = buttonVirtual[0];
+      putLetter = e.key;
+
+    }
+
+
     let massiveLettersWord = wordContainer.querySelectorAll(".word__letter");
     let indexLetter = Array.from(massiveLettersWord).map(e => e.textContent).indexOf(putLetter);
     let doubleIndexLetter = Array.from(massiveLettersWord).map(e => e.textContent).lastIndexOf(putLetter);
 
+
     let modalSecretWord = document.querySelector('.modal__secret-word');
-    let wholeWord = Array.from(massiveLettersWord).map(e => e.textContent).join('');
+    let wholeWord = Array.from(massiveLettersWord).map(e => e.outerText).join('');
 
     if (indexLetter === doubleIndexLetter) {
       if ((massiveLettersWord[indexLetter])) {
@@ -64,9 +82,7 @@ function putKeyboard(e) {
         digitGuesses.textContent = counterGuesses;
       }
     }
-    console.log(indexLetter);
-    console.log(doubleIndexLetter);
-    console.log(!(indexLetter === doubleIndexLetter))
+
     if (!(indexLetter === doubleIndexLetter)) {
       massiveLettersWord[indexLetter].style.color = "black";
       massiveLettersWord[doubleIndexLetter].style.color = "black";
@@ -75,14 +91,10 @@ function putKeyboard(e) {
       counterRightLetters += 2;
     }
 
-    e.target.style.background = "grey";
-    e.target.classList.toggle('button-no-active');
+    activeButton.style.background = "grey";
+    activeButton.classList.toggle('button-no-active');
     modalSecretWord.textContent = `Secret word: ${wholeWord}`;
 
-    // console.log(counterGuesses === 6);
-    // console.log(counterRightLetters === massiveLettersWord.length);
-    // console.log(counterRightLetters);
-    // console.log(massiveLettersWord.length);
 
     if ((counterGuesses === 6) || (counterRightLetters === massiveLettersWord.length)) {
       openModal();
@@ -107,7 +119,10 @@ function openModal() {
 
 }
 
-keyboardContainer.addEventListener("click", putKeyboard)
+keyboardContainer.addEventListener("click", putKeyboard);
+
+
+document.addEventListener("keydown", putKeyboard);
 
 
 
@@ -121,15 +136,10 @@ function addNewWord() {
   // console.log(newWord.length);
   createNewWord();
 
-  // console.log(describeWordWrapper);
-
-
   function createNewWord() {
-    // console.log(numberWord);
     let ulNewWord = document.createElement('ul');
     ulNewWord.classList.add('word');
     let massiveNewWord = newWord.split('');
-    // console.log(massiveNewWord);
 
     for (let i = 0; i < newWord.length; i++) {
       let liNewWord = document.createElement('li');
@@ -137,13 +147,12 @@ function addNewWord() {
       liNewWord.textContent = massiveNewWord[i];
       ulNewWord.append(liNewWord);
     }
-    // console.log(describeWordWrapper);
-    // console.log(ulNewWord);
     describeWordWrapper.prepend(ulNewWord);
   }
 
 }
 
+// ------Play--- again ------------------
 function playAgain() {
   counterGuesses = 0;
   digitGuesses.textContent = counterGuesses;

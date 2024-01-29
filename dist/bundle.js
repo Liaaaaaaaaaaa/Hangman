@@ -96,7 +96,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// Module\nvar code = \"<!DOCTYPE html>\\r\\n<html lang=\\\"en\\\">\\r\\n<head>\\r\\n  <meta charset=\\\"UTF-8\\\">\\r\\n  <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\\r\\n  <title>Hangman</title>\\r\\n</head>\\r\\n<body>\\r\\n  \\r\\n</body>\\r\\n</html>\";\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);\n\n//# sourceURL=webpack://hangman/./src/index.html?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/html-loader/dist/runtime/getUrl.js */ \"./node_modules/html-loader/dist/runtime/getUrl.js\");\n/* harmony import */ var _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./assets/images_hangman.png */ \"./src/assets/images_hangman.png\"), __webpack_require__.b);\n// Module\nvar ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);\nvar code = \"<!DOCTYPE html>\\r\\n<html lang=\\\"en\\\">\\r\\n<head>\\r\\n  <meta charset=\\\"UTF-8\\\">\\r\\n  <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\\r\\n  <link rel=\\\"shortcut icon\\\" href=\\\"\" + ___HTML_LOADER_REPLACEMENT_0___ + \"\\\" type=\\\"image/x-icon\\\">\\r\\n  <title>Hangman</title>\\r\\n</head>\\r\\n<body>\\r\\n  \\r\\n</body>\\r\\n</html>\";\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);\n\n//# sourceURL=webpack://hangman/./src/index.html?");
+
+/***/ }),
+
+/***/ "./node_modules/html-loader/dist/runtime/getUrl.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/html-loader/dist/runtime/getUrl.js ***!
+  \*********************************************************/
+/***/ ((module) => {
+
+eval("\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    // eslint-disable-next-line no-param-reassign\n    options = {};\n  }\n  if (!url) {\n    return url;\n  }\n\n  // eslint-disable-next-line no-underscore-dangle, no-param-reassign\n  url = String(url.__esModule ? url.default : url);\n  if (options.hash) {\n    // eslint-disable-next-line no-param-reassign\n    url += options.hash;\n  }\n  if (options.maybeNeedQuotes && /[\\t\\n\\f\\r \"'=<>`]/.test(url)) {\n    return \"\\\"\".concat(url, \"\\\"\");\n  }\n  return url;\n};\n\n//# sourceURL=webpack://hangman/./node_modules/html-loader/dist/runtime/getUrl.js?");
 
 /***/ }),
 
@@ -206,7 +216,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _wordContainer_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./wordContainer.html */ \"./src/components/WordContainer/wordContainer.html\");\n/* harmony import */ var _utils_htmltoElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/htmltoElement */ \"./src/utils/htmltoElement.js\");\n/* harmony import */ var _WordContainer_Keyboard_keyboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../WordContainer/Keyboard/keyboard */ \"./src/components/WordContainer/Keyboard/keyboard.js\");\n/* harmony import */ var _WordContainer_DescribeWord_describeWord__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../WordContainer/DescribeWord/describeWord */ \"./src/components/WordContainer/DescribeWord/describeWord.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nlet wordContainer = (0,_utils_htmltoElement__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(_wordContainer_html__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\r\nwordContainer.append(_WordContainer_DescribeWord_describeWord__WEBPACK_IMPORTED_MODULE_3__[\"default\"]);\r\nwordContainer.append(_WordContainer_Keyboard_keyboard__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\r\n\r\n\r\n// const keyboardContainer = wordContainer.querySelector(\".keyboard__wrapper\");\r\n// let counterGuesses = 0;\r\n// const humanParts = wordContainer.querySelectorAll(\".human__part\");\r\n\r\n\r\n// function putKeyboard(e) {\r\n//   if (e.target.className === \"keyboard__button\") {\r\n//     let putLetter = e.target.innerText.toLowerCase();\r\n//     let massiveLettersWord = wordContainer.querySelectorAll(\".word__letter\");\r\n//     let indexLetter = Array.from(massiveLettersWord).map(e => e.textContent).indexOf(putLetter);\r\n//     let digitGuesses = wordContainer.querySelector(\".guesses__digit\");\r\n\r\n//     if (massiveLettersWord[indexLetter]) {\r\n//       massiveLettersWord[indexLetter].style.color = \"black\";\r\n//     }\r\n//     e.target.style.background = \"grey\";\r\n//     counterGuesses += 1;\r\n//     digitGuesses.textContent = counterGuesses;\r\n//     console.log(humanParts)\r\n//     // humanParts[counterGuesses].style.background = \"red\"\r\n\r\n\r\n\r\n//   }\r\n\r\n// }\r\n\r\n// // console.log(keyboardContainer)\r\n// keyboardContainer.addEventListener(\"click\", putKeyboard)\r\n\r\n\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (wordContainer);\r\n\n\n//# sourceURL=webpack://hangman/./src/components/WordContainer/wordContainer.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _wordContainer_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./wordContainer.html */ \"./src/components/WordContainer/wordContainer.html\");\n/* harmony import */ var _utils_htmltoElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/htmltoElement */ \"./src/utils/htmltoElement.js\");\n/* harmony import */ var _WordContainer_Keyboard_keyboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../WordContainer/Keyboard/keyboard */ \"./src/components/WordContainer/Keyboard/keyboard.js\");\n/* harmony import */ var _WordContainer_DescribeWord_describeWord__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../WordContainer/DescribeWord/describeWord */ \"./src/components/WordContainer/DescribeWord/describeWord.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nlet wordContainer = (0,_utils_htmltoElement__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(_wordContainer_html__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\r\nwordContainer.append(_WordContainer_DescribeWord_describeWord__WEBPACK_IMPORTED_MODULE_3__[\"default\"]);\r\nwordContainer.append(_WordContainer_Keyboard_keyboard__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\r\n\r\n\r\n\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (wordContainer);\r\n\n\n//# sourceURL=webpack://hangman/./src/components/WordContainer/wordContainer.js?");
 
 /***/ }),
 
@@ -226,7 +236,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.html */ \"./src/index.html\");\n/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.scss */ \"./src/styles/main.scss\");\n/* harmony import */ var _components_WordContainer_DescribeWord_riddles_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/WordContainer/DescribeWord/riddles.json */ \"./src/components/WordContainer/DescribeWord/riddles.json\");\n/* harmony import */ var _components_gallows_gallows_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/gallows/gallows.js */ \"./src/components/gallows/gallows.js\");\n/* harmony import */ var _components_WordContainer_wordContainer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/WordContainer/wordContainer.js */ \"./src/components/WordContainer/wordContainer.js\");\n/* harmony import */ var _components_Modal_modal_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Modal/modal.js */ \"./src/components/Modal/modal.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nconst body = document.querySelector('body');\r\nbody.append(_components_gallows_gallows_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"]);\r\nbody.append(_components_WordContainer_wordContainer_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"]);\r\nbody.append(_components_Modal_modal_js__WEBPACK_IMPORTED_MODULE_5__[\"default\"]);\r\n\r\n//--keyboard ------------\r\nconst keyboardContainer = _components_WordContainer_wordContainer_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"].querySelector(\".keyboard__wrapper\");\r\nconst keyboardButtons = document.querySelectorAll('.keyboard__button');\r\n\r\n\r\n//-----Guesses-------------------\r\nlet counterGuesses = 0;\r\nlet counterRightLetters = 0;\r\n\r\n//--gallows ------------------\r\nconst humanParts = _components_gallows_gallows_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"].querySelectorAll(\".human__part\");\r\n\r\n//-----Word---------\r\nlet numberWord = 0;\r\n\r\nconst describeWordWrapper = document.querySelector('.describeWord__wrapper');\r\n\r\n//---digit------\r\nlet digitGuesses = _components_WordContainer_wordContainer_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"].querySelector(\".guesses__digit\");\r\n\r\n\r\n//----Modal ------------------\r\nconst modalWindow = document.querySelector('.modal');\r\nconst modalTitle = document.querySelector('.modal__title');\r\nconst modalText = document.querySelector('.modal__text');\r\n\r\n//-------Play-again--------\r\nconst modalButton = document.querySelector('.modal__button');\r\n\r\n\r\nfunction putKeyboard(e) {\r\n  if (e.target.className === \"keyboard__button\") {\r\n    let putLetter = e.target.innerText.toLowerCase();\r\n    let massiveLettersWord = _components_WordContainer_wordContainer_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"].querySelectorAll(\".word__letter\");\r\n    let indexLetter = Array.from(massiveLettersWord).map(e => e.textContent).indexOf(putLetter);\r\n    let doubleIndexLetter = Array.from(massiveLettersWord).map(e => e.textContent).lastIndexOf(putLetter);\r\n\r\n    let modalSecretWord = document.querySelector('.modal__secret-word');\r\n    let wholeWord = Array.from(massiveLettersWord).map(e => e.textContent).join('');\r\n\r\n    if (indexLetter === doubleIndexLetter) {\r\n      if ((massiveLettersWord[indexLetter])) {\r\n        massiveLettersWord[indexLetter].style.color = \"black\";\r\n        massiveLettersWord[indexLetter].style.borderBottom = \"none\";\r\n        counterRightLetters += 1;\r\n      } else {\r\n        humanParts[counterGuesses].style.background = \"red\"\r\n        counterGuesses += 1;\r\n        digitGuesses.textContent = counterGuesses;\r\n      }\r\n    }\r\n    console.log(indexLetter);\r\n    console.log(doubleIndexLetter);\r\n    console.log(!(indexLetter === doubleIndexLetter))\r\n    if (!(indexLetter === doubleIndexLetter)) {\r\n      massiveLettersWord[indexLetter].style.color = \"black\";\r\n      massiveLettersWord[doubleIndexLetter].style.color = \"black\";\r\n      massiveLettersWord[indexLetter].style.borderBottom = \"none\";\r\n      massiveLettersWord[doubleIndexLetter].style.borderBottom = \"none\";\r\n      counterRightLetters += 2;\r\n    }\r\n\r\n    e.target.style.background = \"grey\";\r\n    e.target.classList.toggle('button-no-active');\r\n    modalSecretWord.textContent = `Secret word: ${wholeWord}`;\r\n\r\n    // console.log(counterGuesses === 6);\r\n    // console.log(counterRightLetters === massiveLettersWord.length);\r\n    // console.log(counterRightLetters);\r\n    // console.log(massiveLettersWord.length);\r\n\r\n    if ((counterGuesses === 6) || (counterRightLetters === massiveLettersWord.length)) {\r\n      openModal();\r\n      counterRightLetters = 0;\r\n    }\r\n  }\r\n\r\n}\r\n\r\n\r\nfunction openModal() {\r\n  if (counterGuesses === 6) {\r\n    modalTitle.textContent = \"No congratulations!\";\r\n    modalText.textContent = \"You lost\";\r\n  } else {\r\n    modalTitle.textContent = \"Congratulations!\";\r\n    modalText.textContent = \"You won. Good job\";\r\n  }\r\n  let wordNode = document.querySelector('.word');\r\n  wordNode.remove();\r\n  modalWindow.classList.toggle('active');\r\n\r\n}\r\n\r\nkeyboardContainer.addEventListener(\"click\", putKeyboard)\r\n\r\n\r\n\r\n\r\n\r\nfunction addNewWord() {\r\n  console.log(numberWord);\r\n  document.querySelector(\".hint\").textContent = _components_WordContainer_DescribeWord_riddles_json__WEBPACK_IMPORTED_MODULE_2__[numberWord].description;\r\n  let newWord = _components_WordContainer_DescribeWord_riddles_json__WEBPACK_IMPORTED_MODULE_2__[numberWord].answer;\r\n  // console.log(newWord);\r\n  // console.log(newWord.length);\r\n  createNewWord();\r\n\r\n  // console.log(describeWordWrapper);\r\n\r\n\r\n  function createNewWord() {\r\n    // console.log(numberWord);\r\n    let ulNewWord = document.createElement('ul');\r\n    ulNewWord.classList.add('word');\r\n    let massiveNewWord = newWord.split('');\r\n    // console.log(massiveNewWord);\r\n\r\n    for (let i = 0; i < newWord.length; i++) {\r\n      let liNewWord = document.createElement('li');\r\n      liNewWord.classList.add('word__letter');\r\n      liNewWord.textContent = massiveNewWord[i];\r\n      ulNewWord.append(liNewWord);\r\n    }\r\n    // console.log(describeWordWrapper);\r\n    // console.log(ulNewWord);\r\n    describeWordWrapper.prepend(ulNewWord);\r\n  }\r\n\r\n}\r\n\r\nfunction playAgain() {\r\n  counterGuesses = 0;\r\n  digitGuesses.textContent = counterGuesses;\r\n  humanParts.forEach(e => { e.style.background = \"white\" });\r\n  keyboardButtons.forEach(e => e.style.background = \"yellow\");\r\n  keyboardButtons.forEach(e => e.classList.remove('button-no-active'));\r\n\r\n  numberWord += 1;\r\n  addNewWord();\r\n\r\n  // wordContainer.querySelectorAll(\".word__letter\");\r\n  modalWindow.classList.toggle('active');\r\n\r\n}\r\n\r\n\r\nmodalButton.addEventListener(\"click\", playAgain);\n\n//# sourceURL=webpack://hangman/./src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.html */ \"./src/index.html\");\n/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.scss */ \"./src/styles/main.scss\");\n/* harmony import */ var _components_WordContainer_DescribeWord_riddles_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/WordContainer/DescribeWord/riddles.json */ \"./src/components/WordContainer/DescribeWord/riddles.json\");\n/* harmony import */ var _components_gallows_gallows_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/gallows/gallows.js */ \"./src/components/gallows/gallows.js\");\n/* harmony import */ var _components_WordContainer_wordContainer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/WordContainer/wordContainer.js */ \"./src/components/WordContainer/wordContainer.js\");\n/* harmony import */ var _components_Modal_modal_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Modal/modal.js */ \"./src/components/Modal/modal.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nconst body = document.querySelector('body');\r\nbody.append(_components_gallows_gallows_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"]);\r\nbody.append(_components_WordContainer_wordContainer_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"]);\r\nbody.append(_components_Modal_modal_js__WEBPACK_IMPORTED_MODULE_5__[\"default\"]);\r\n\r\n\r\n//--keyboard ------------\r\nconst keyboardContainer = _components_WordContainer_wordContainer_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"].querySelector(\".keyboard__wrapper\");\r\nconst keyboardButtons = document.querySelectorAll('.keyboard__button');\r\n\r\n//-----Guesses-------------------\r\nlet counterGuesses = 0;\r\nlet counterRightLetters = 0;\r\n\r\n//--gallows ------------------\r\nconst humanParts = _components_gallows_gallows_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"].querySelectorAll(\".human__part\");\r\n\r\n//-----Word---------\r\nlet numberWord = 0;\r\n\r\nconst describeWordWrapper = document.querySelector('.describeWord__wrapper');\r\n\r\n//---digit------\r\nlet digitGuesses = _components_WordContainer_wordContainer_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"].querySelector(\".guesses__digit\");\r\n\r\n\r\n//----Modal ------------------\r\nconst modalWindow = document.querySelector('.modal');\r\nconst modalTitle = document.querySelector('.modal__title');\r\nconst modalText = document.querySelector('.modal__text');\r\n\r\n//-------Play-again--------\r\nconst modalButton = document.querySelector('.modal__button');\r\n\r\n\r\nfunction putKeyboard(e) {\r\n\r\n  if (e.target.className === \"keyboard__button\" || e.key) {\r\n    console.log(e);\r\n\r\n    let putLetter;\r\n    let activeButton;\r\n\r\n    if (e.target.className === \"keyboard__button\") {\r\n      putLetter = e.target.innerText.toLowerCase();\r\n      activeButton = e.target;\r\n    } else {\r\n      putLetter = e.key.toUpperCase();\r\n      let buttonVirtual = Array.from(keyboardButtons).filter(e => e.outerText === putLetter);\r\n      activeButton = buttonVirtual[0];\r\n      putLetter = e.key;\r\n\r\n    }\r\n\r\n\r\n    let massiveLettersWord = _components_WordContainer_wordContainer_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"].querySelectorAll(\".word__letter\");\r\n    let indexLetter = Array.from(massiveLettersWord).map(e => e.textContent).indexOf(putLetter);\r\n    let doubleIndexLetter = Array.from(massiveLettersWord).map(e => e.textContent).lastIndexOf(putLetter);\r\n\r\n\r\n    let modalSecretWord = document.querySelector('.modal__secret-word');\r\n    let wholeWord = Array.from(massiveLettersWord).map(e => e.outerText).join('');\r\n\r\n    if (indexLetter === doubleIndexLetter) {\r\n      if ((massiveLettersWord[indexLetter])) {\r\n        massiveLettersWord[indexLetter].style.color = \"black\";\r\n        massiveLettersWord[indexLetter].style.borderBottom = \"none\";\r\n        counterRightLetters += 1;\r\n      } else {\r\n        humanParts[counterGuesses].style.background = \"red\"\r\n        counterGuesses += 1;\r\n        digitGuesses.textContent = counterGuesses;\r\n      }\r\n    }\r\n\r\n    if (!(indexLetter === doubleIndexLetter)) {\r\n      massiveLettersWord[indexLetter].style.color = \"black\";\r\n      massiveLettersWord[doubleIndexLetter].style.color = \"black\";\r\n      massiveLettersWord[indexLetter].style.borderBottom = \"none\";\r\n      massiveLettersWord[doubleIndexLetter].style.borderBottom = \"none\";\r\n      counterRightLetters += 2;\r\n    }\r\n\r\n    activeButton.style.background = \"grey\";\r\n    activeButton.classList.toggle('button-no-active');\r\n    modalSecretWord.textContent = `Secret word: ${wholeWord}`;\r\n\r\n\r\n    if ((counterGuesses === 6) || (counterRightLetters === massiveLettersWord.length)) {\r\n      openModal();\r\n      counterRightLetters = 0;\r\n    }\r\n  }\r\n\r\n}\r\n\r\n\r\nfunction openModal() {\r\n  if (counterGuesses === 6) {\r\n    modalTitle.textContent = \"No congratulations!\";\r\n    modalText.textContent = \"You lost\";\r\n  } else {\r\n    modalTitle.textContent = \"Congratulations!\";\r\n    modalText.textContent = \"You won. Good job\";\r\n  }\r\n  let wordNode = document.querySelector('.word');\r\n  wordNode.remove();\r\n  modalWindow.classList.toggle('active');\r\n\r\n}\r\n\r\nkeyboardContainer.addEventListener(\"click\", putKeyboard);\r\n\r\n\r\ndocument.addEventListener(\"keydown\", putKeyboard);\r\n\r\n\r\n\r\n\r\n\r\nfunction addNewWord() {\r\n  console.log(numberWord);\r\n  document.querySelector(\".hint\").textContent = _components_WordContainer_DescribeWord_riddles_json__WEBPACK_IMPORTED_MODULE_2__[numberWord].description;\r\n  let newWord = _components_WordContainer_DescribeWord_riddles_json__WEBPACK_IMPORTED_MODULE_2__[numberWord].answer;\r\n  // console.log(newWord);\r\n  // console.log(newWord.length);\r\n  createNewWord();\r\n\r\n  function createNewWord() {\r\n    let ulNewWord = document.createElement('ul');\r\n    ulNewWord.classList.add('word');\r\n    let massiveNewWord = newWord.split('');\r\n\r\n    for (let i = 0; i < newWord.length; i++) {\r\n      let liNewWord = document.createElement('li');\r\n      liNewWord.classList.add('word__letter');\r\n      liNewWord.textContent = massiveNewWord[i];\r\n      ulNewWord.append(liNewWord);\r\n    }\r\n    describeWordWrapper.prepend(ulNewWord);\r\n  }\r\n\r\n}\r\n\r\n// ------Play--- again ------------------\r\nfunction playAgain() {\r\n  counterGuesses = 0;\r\n  digitGuesses.textContent = counterGuesses;\r\n  humanParts.forEach(e => { e.style.background = \"white\" });\r\n  keyboardButtons.forEach(e => e.style.background = \"yellow\");\r\n  keyboardButtons.forEach(e => e.classList.remove('button-no-active'));\r\n\r\n  numberWord += 1;\r\n  addNewWord();\r\n\r\n  // wordContainer.querySelectorAll(\".word__letter\");\r\n  modalWindow.classList.toggle('active');\r\n\r\n}\r\n\r\n\r\nmodalButton.addEventListener(\"click\", playAgain);\n\n//# sourceURL=webpack://hangman/./src/main.js?");
 
 /***/ }),
 
@@ -237,6 +247,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ind
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\n/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(htmlString) {\r\n  const template = document.createElement('template');\r\n  template.innerHTML = htmlString;\r\n  return template.content.firstChild\r\n}\r\n\r\n\n\n//# sourceURL=webpack://hangman/./src/utils/htmltoElement.js?");
+
+/***/ }),
+
+/***/ "./src/assets/images_hangman.png":
+/*!***************************************!*\
+  !*** ./src/assets/images_hangman.png ***!
+  \***************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"dd51f3a3b72473230ace.png\";\n\n//# sourceURL=webpack://hangman/./src/assets/images_hangman.png?");
 
 /***/ }),
 
@@ -276,6 +296,9 @@ eval("module.exports = /*#__PURE__*/JSON.parse('[{\"number\":\"1\",\"description
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -301,6 +324,18 @@ eval("module.exports = /*#__PURE__*/JSON.parse('[{\"number\":\"1\",\"description
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -315,6 +350,55 @@ eval("module.exports = /*#__PURE__*/JSON.parse('[{\"number\":\"1\",\"description
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"main": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
